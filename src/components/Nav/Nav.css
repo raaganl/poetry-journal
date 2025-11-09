@@ -6,10 +6,13 @@
   background-color: var(--component-background);
   padding: 10px;
   display: inline-flex;
-  padding: 300px 30px 50px 30px;
+  padding: 200px 30px 50px 30px;
   flex-shrink: 0;
   gap: 50px;
+  top:0;
+  width: 170px;
 }
+
 .nav-link{
   color: var(--true-black);
   display: flex;
@@ -21,10 +24,12 @@
   font-size: var(--clickables-size);
   font-weight: var(--font-weight-regular);
 }
+
 .nav-link.active {
   color: var(--true-black);
   background-color: var(--select-component-background);
 }
+
 .nav-link:hover{
   color: var(--mid-grey);
 }

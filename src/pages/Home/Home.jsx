@@ -1,3 +1,9 @@
+import JournalEntryForm from "../../components/JournalEntryForm/JournalEntryForm";
+
 export default function Home() {
-  return <div><h1>Home Page</h1></div>;
+  return(
+    <div class = "page-content-container">
+      <JournalEntryForm />
+    </div>
+  );
 }

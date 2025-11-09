@@ -8,11 +8,14 @@ import "./App.css"
 export default function App() {
   return (
     <Router>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/entries" element={<Entries />} />
-      </Routes>
+      <div class = "app-container">
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/entries" element={<Entries />} />
+        </Routes>
+      </div>
     </Router>
+
   );
 }
