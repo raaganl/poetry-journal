@@ -6,11 +6,11 @@
   background-color: var(--component-background);
   padding: 10px;
   display: inline-flex;
-  padding: 200px 30px 50px 30px;
+  padding: 150px 30px 50px 30px;
   flex-shrink: 0;
   gap: 50px;
   top:0;
-  width: 170px;
+  width: 160px;
 }
 
 .nav-link{

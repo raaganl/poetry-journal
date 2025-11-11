@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './JournalEntryForm.css'
+import Button from '../Button/Button';
 
 export default function JournalEntryForm() {
   const [textAreaValue, setTextAreaValue] = useState('');
-  const currentDate = new Date().toLocaleDateString();;
+  const currentDate = new Date().toLocaleDateString();
 
   const handleChange = (event) => {
     setTextAreaValue(event.target.value);
@@ -22,6 +23,10 @@ export default function JournalEntryForm() {
           cols="30" // Optional: Set the initial number of visible columns
           placeholder="Type here..." // Optional: Placeholder text
         />
+        <div class = "button-container-entry">
+          <Button buttonText={"Save"} type = {"primary-button"}/>
+          <Button buttonText={"Submit"} type = {"secondary-button"}/>
+        </div>
       </form>
     </div>
   );
