@@ -1,18 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 :root {
-  --paper-yellow: #F1EEE1;
-  --primary-background: #FBFBFA;
-  --component-background: #ECEDE4;
-  --select-component-background: #D1D7C8;
-  --light-grey: #B4B4B4;
-  --mid-grey: #7E7E7E;
-  --dark-grey: #303030;
-  --true-black: #1A1A18;
+  --white: #FDFCFA;
+  --light-grey: #C8C6C4;
+  --grey: #898884;
+  --dark-grey: #5A5755;
+  --black: #000000;
+  --brand: #2E559E;
+  --brand-dark: #173771;
+  --brand-gradient:  linear-gradient(180deg, #FAF7EF 0%, #DDDBF8 100%);
 
-  /*Fonts*/
-  --font-body: "Opens Sans";
-  --font-heading: Newsreader;
-  --font-newspaper: Newsreader;
 
   --clickables-size: 1.5 rem;
   --font-body-size: 1.3 rem;
@@ -34,7 +30,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--primary-background);
+  background-color: var(--white);
   font-family: 'Open Sans', sans-serif;
 }
 .app-container{
@@ -42,9 +38,4 @@ body {
   flex-direction: row;
   height: 100vh;
   width: 100vw;
-}
-
-.news-heading{
-  font-family: var(--font-newspaper);
-  font-size: 2.5rem;
 }

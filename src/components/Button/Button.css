@@ -1,8 +1,8 @@
 .primary-button{
-    background-color: var(--dark-grey);
+    background-color: var(--black);
     padding: 15px 30px 15px 30px;
     height:fit-content;
-    color: var(--primary-background);
+    color: var(--white);
     border: none;
     width: fit-content;
     border-radius: 10px;
@@ -11,23 +11,23 @@
 }
 
 .primary-button:hover{
-    background-color: var(--true-black);
+    background-color: var(--dark-grey);
 
 }
 
 .secondary-button{
-    background-color: var(--primary-background);
+    background-color: var(--white);
     padding: 15px 30px 15px 30px;
     height:fit-content;
     color: var(--dark-grey);
-    border: 2px solid var(--dark-grey);
+    border: 2px solid var(--black);
     width: fit-content;
     border-radius: 10px;
     font-size: var(--clickables-text);
 }
 
 .secondary-button:hover{
-    background-color: var(--true-black);
-    color: var(--primary-background);
+    background-color: var(--black);
+    color: var(--white);
     border:none;
 }

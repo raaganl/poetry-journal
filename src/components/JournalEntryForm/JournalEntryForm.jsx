@@ -4,26 +4,36 @@ import Button from '../Button/Button';
 
 export default function JournalEntryForm() {
   const [textAreaValue, setTextAreaValue] = useState('');
+  const [titleValue, setTitleValue] = useState('');
   const currentDate = new Date().toLocaleDateString();
 
-  const handleChange = (event) => {
+  const handleTextChange = (event) => {
     setTextAreaValue(event.target.value);
+  };
+  const handleTitleChange = (event) => {
+    setTitleValue(event.target.value);
   };
 
   return (
-    <div class = "journal-entry-container">
+    <div className = "poem-entry-container">
       <h2>{currentDate}</h2>
-      <h1 class = "news-heading">Question</h1>
       <form>
-        <textarea class = "entry-text-area"
+        <input 
+          id = "title"
+          className="entry-title" 
+          type="text" 
+          value={titleValue} 
+          onChange={handleTitleChange} 
+          placeholder="Title" 
+        />
+        <textarea className = "entry-text-area"
           id="myTextArea"
           value={textAreaValue}
-          onChange={handleChange}
+          onChange={handleTextChange}
           rows="5" // Optional: Set the initial number of visible rows
           cols="30" // Optional: Set the initial number of visible columns
-          placeholder="Type here..." // Optional: Placeholder text
         />
-        <div class = "button-container-entry">
+        <div className = "button-container-entry">
           <Button buttonText={"Save"} type = {"primary-button"}/>
           <Button buttonText={"Submit"} type = {"secondary-button"}/>
         </div>
