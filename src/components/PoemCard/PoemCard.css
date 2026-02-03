@@ -1,0 +1,21 @@
+.poem-card-container{
+    width: auto;
+    height: fit-content;
+    padding: 10px 20px 10px 20px;
+    border:solid;
+    border-radius: 20px;
+    border-color: var(--light-grey);
+}
+.poem-date{
+    color:var(--grey);
+}
+.poem-title{
+    color:var(--black);
+    font-size: var(--subtitle);
+    font-weight: var(--font-weight-medium);
+}
+.poem-body{
+    color:var(--black);
+    font-size: var(--body);
+    font-weight: var(--font-weight-regular);
+}

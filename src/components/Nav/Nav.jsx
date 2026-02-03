@@ -1,6 +1,6 @@
 import "./Nav.css";
 import { NavLink } from "react-router-dom";
-import { Book2Line, Book2Fill, QuillPenLine, QuillPenFill } from "@mingcute/react";
+import { Book2Line, Book2Fill, QuillPenLine, QuillPenFill, Bulb2Fill, Bulb2Line } from "@mingcute/react";
 
 export default function Nav() {
   return (
@@ -10,7 +10,7 @@ export default function Nav() {
           isActive ? <div className = "link-container"><QuillPenFill className = "link-icon-active"/> <p className = "link-text-active">Write</p></div> : <div className = "link-container"><QuillPenLine className = "link-icon"/> <p className = "link-text">Write</p></div>
         }
       </NavLink>
-      <NavLink to="/Entries" className="nav-link">
+      <NavLink to="/Works" className="nav-link">
         {({ isActive }) =>
           isActive ? <div className = "link-container"><Book2Fill className = "link-icon-active" /> <p className = "link-text-active">Works</p></div> : <div className = "link-container"><Book2Line className = "link-icon" /> <p className = "link-text">Works</p></div>
         }

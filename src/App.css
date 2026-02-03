@@ -9,11 +9,15 @@
   --brand-dark: #173771;
   --brand-gradient:  linear-gradient(180deg, #FAF7EF 0%, #DDDBF8 100%);
 
+  --title: 2rem;
+  --subtitle: 1.4rem;
+  --accent: 1.2rem;
+  --clickables-text: 1rem;
+  --body-text: 1.1rem;
 
-  --clickables-size: 1.5 rem;
-  --font-body-size: 1.3 rem;
-
-  --font-weight-regular: 600;
+  --font-weight-medium: 600;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
 }
 
 a {
@@ -34,8 +38,6 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 .app-container{
-  display: flex;
-  flex-direction: row;
   height: 100vh;
   width: 100vw;
 }

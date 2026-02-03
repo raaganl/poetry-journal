@@ -6,10 +6,11 @@
   background: var(--brand-gradient);
   padding: 10px;
   display: inline-flex;
-  padding: 150px 30px 50px 30px;
+  padding: 120px 20px 50px 20px;
   flex-shrink: 0;
   top:0;
   width: 100px;
+  position: fixed;
 }
 
 .nav-link{
@@ -20,7 +21,7 @@
   align-items: center;
   border-radius: 100px;
   gap: 10px;
-  font-size: var(--clickables-size);
+  font-size: var(--clickables-text);
   font-weight: var(--font-weight-regular);
 }
 
@@ -54,7 +55,7 @@
   color: var(--black);
   .link-text{
     display: block;
-    animation: slideIn 0.4s forwards;
+    animation: slideIn .5s ease;
   }
   .link-icon{
     top: -10px;
@@ -65,7 +66,7 @@
 
 @keyframes slideIn {
   from {
-    transform: translateX(50%);
+    transform: translateX(20%);
     opacity: 10;
   }
   to {

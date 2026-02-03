@@ -5,7 +5,6 @@ import Button from '../Button/Button';
 export default function JournalEntryForm() {
   const [textAreaValue, setTextAreaValue] = useState('');
   const [titleValue, setTitleValue] = useState('');
-  const currentDate = new Date().toLocaleDateString();
 
   const handleTextChange = (event) => {
     setTextAreaValue(event.target.value);
@@ -13,10 +12,16 @@ export default function JournalEntryForm() {
   const handleTitleChange = (event) => {
     setTitleValue(event.target.value);
   };
+  const date = new Date();
+
+  const day = date.getDate();    
+  const month = date.getMonth() + 1; 
+  const year = date.getFullYear();
+
+  const formattedDate = `${day} . ${month} . ${year}`;
 
   return (
     <div className = "poem-entry-container">
-      <h2>{currentDate}</h2>
       <form>
         <input 
           id = "title"
@@ -30,12 +35,10 @@ export default function JournalEntryForm() {
           id="myTextArea"
           value={textAreaValue}
           onChange={handleTextChange}
-          rows="5" // Optional: Set the initial number of visible rows
-          cols="30" // Optional: Set the initial number of visible columns
+          placeholder="Begin writing ~" 
         />
         <div className = "button-container-entry">
-          <Button buttonText={"Save"} type = {"primary-button"}/>
-          <Button buttonText={"Submit"} type = {"secondary-button"}/>
+          <Button buttonText={"Save"} type = {"submit"} className = {"primary-button"}/>
         </div>
       </form>
     </div>

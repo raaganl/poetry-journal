@@ -1,0 +1,10 @@
+.poem-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(350px, 1fr));
+  gap: 20px;
+}
+@media(max-width: 1000px){
+    .poem-container{
+        grid-template-columns: repeat(1, minmax(200px,1fr));
+    }
+}

@@ -1,6 +1,6 @@
 .primary-button{
     background-color: var(--black);
-    padding: 15px 30px 15px 30px;
+    padding: 15px 20px 15px 20px;
     height:fit-content;
     color: var(--white);
     border: none;
@@ -17,10 +17,10 @@
 
 .secondary-button{
     background-color: var(--white);
-    padding: 15px 30px 15px 30px;
+    padding: 15px 20px 15px 20px;
     height:fit-content;
     color: var(--dark-grey);
-    border: 2px solid var(--black);
+    border: 1.5px solid var(--black);
     width: fit-content;
     border-radius: 10px;
     font-size: var(--clickables-text);
