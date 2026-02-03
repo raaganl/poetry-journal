@@ -8,7 +8,7 @@ import "./App.css"
 export default function App() {
   return (
     <Router>
-      <div class = "app-container">
+      <div className = "app-container">
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
