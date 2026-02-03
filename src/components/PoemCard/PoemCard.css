@@ -1,5 +1,5 @@
 .poem-card-container{
-    width: auto;
+    width: 100%;
     height: fit-content;
     padding: 10px 20px 10px 20px;
     border:solid;
@@ -8,14 +8,18 @@
 }
 .poem-date{
     color:var(--grey);
+    text-align:right;
+    margin:0;
 }
 .poem-title{
     color:var(--black);
     font-size: var(--subtitle);
     font-weight: var(--font-weight-medium);
+    margin-bottom:.5rem;
 }
 .poem-body{
     color:var(--black);
     font-size: var(--body);
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-regular); 
+    margin:0;
 }

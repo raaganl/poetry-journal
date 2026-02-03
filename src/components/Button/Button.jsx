@@ -6,7 +6,7 @@ export default function Button({buttonText, type, className}){
         console.log("clicked!")
     }
     return(
-        <button onClick={handleClick} type={type} className = {className}>{buttonText}</button>
+        <button onClick={handleClick} type={type} className ={className}>{buttonText}</button>
     );
 
 }
