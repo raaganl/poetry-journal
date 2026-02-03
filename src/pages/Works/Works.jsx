@@ -2,10 +2,12 @@ import PoemCard from "../../components/PoemCard/PoemCard"
 import "./Works.css"
 import React from "react"
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+import SearchBar from "../../components/SearchBar/SearchBar"
 
 export default function Works() {
   return (
   <div className = "page-content-container"> 
+    <SearchBar />
     <ResponsiveMasonry
     columnsCountBreakPoints={{ 0: 1, 800: 2 }}
     gutterBreakPoints={{ 0: "1rem" }}
