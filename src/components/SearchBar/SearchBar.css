@@ -1,0 +1,27 @@
+.search-container{
+    padding-bottom:20px;
+}
+.search-input-container{
+    width: 100%;
+    height:auto;
+    gap:10px;
+    display:flex;
+    flex-direction:row;
+}
+.search-input{
+    width:100%;
+    border:none;
+    outline:none;
+    resize: none;
+    font-size: var(--accent);
+    font-weight: var(--font-weight-regular);
+    background-color: var(--white);
+}
+.search-hr{
+    border:none;
+    border-top: 1px solid var(--light-grey);
+}
+.search-input::placeholder {
+  color: var(--light-grey);    
+  opacity: 1;        
+}

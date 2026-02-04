@@ -12,6 +12,9 @@ export default function JournalEntryForm() {
   const handleTitleChange = (event) => {
     setTitleValue(event.target.value);
   };
+  const handleClick = () => {
+    console.log("clicked!");
+  }
   const date = new Date();
 
   const day = date.getDate();    
@@ -38,7 +41,7 @@ export default function JournalEntryForm() {
           placeholder="Begin writing ~" 
         />
         <div className = "button-container-entry">
-          <Button buttonText={"Save"} type = {"submit"} className = {"primary-button"}/>
+          <Button buttonText={"Save"} type = {"submit"} className = {"primary-button"} handleClick = {handleClick} isActive = {true}/>
         </div>
       </form>
     </div>

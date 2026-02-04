@@ -6,7 +6,7 @@
   background: var(--brand-gradient);
   padding: 10px;
   display: inline-flex;
-  padding: 120px 20px 50px 20px;
+  padding: 80px 20px 50px 20px;
   flex-shrink: 0;
   top:0;
   width: 100px;
@@ -32,6 +32,8 @@
 
 .link-icon{
   position: absolute;
+  top:0;
+  transition: top .3s ease;
 }
 
 .link-text-active{
@@ -55,11 +57,10 @@
   color: var(--black);
   .link-text{
     display: block;
-    animation: slideIn .5s ease;
+    animation: slideIn .3s ease;
   }
   .link-icon{
     top: -10px;
-    transition: top 1s ease;
   }
   
 }
@@ -67,7 +68,7 @@
 @keyframes slideIn {
   from {
     transform: translateX(20%);
-    opacity: 10;
+    opacity: 0;
   }
   to {
     transform: translateX(0);
