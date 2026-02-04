@@ -31,3 +31,14 @@
     color: var(--white);
     border:none;
 }
+
+.disabled-button{
+    background-color: var(--grey);
+    padding: 15px 20px 15px 20px;
+    height:fit-content;
+    color: var(--white);
+    border: none;
+    width: fit-content;
+    border-radius: 10px;
+    font-size: var(--clickables-text);
+}

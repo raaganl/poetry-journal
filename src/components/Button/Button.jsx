@@ -1,12 +1,8 @@
 import "./Button.css"
 
-export default function Button({buttonText, type, className}){
-
-    const handleClick = () =>{
-        console.log("clicked!")
-    }
+export default function Button({buttonText, type, className, handleClick, isActive}){
     return(
-        <button onClick={handleClick} type={type} className ={className}>{buttonText}</button>
+       isActive ? <button onClick={handleClick} type={type} className ={className}>{buttonText}</button> : <button onClick={handleClick} type={type} className ={"disabled-button"} disabled>{buttonText}</button>
     );
 
 }
