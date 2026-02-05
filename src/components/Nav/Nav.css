@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background: var(--brand-gradient);
+  background: var(--white);
   padding: 10px;
   display: inline-flex;
   padding: 60px 20px 50px 20px;
@@ -11,6 +11,8 @@
   top:0;
   width: 100px;
   position: fixed;
+  border-right: solid 1px;
+  border-color:var(--light-grey);
 }
 
 .nav-link{
