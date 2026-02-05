@@ -13,15 +13,15 @@
     border:none;
     outline:none;
     resize: none;
-    font-size: var(--accent);
+    font-size: var(--body);
     font-weight: var(--font-weight-regular);
-    background-color: var(--white);
+    background-color: var(--blue-white);
 }
 .search-hr{
     border:none;
     border-top: 1px solid var(--light-grey);
 }
 .search-input::placeholder {
-  color: var(--light-grey);    
-  opacity: 1;        
+  color: var(--grey);  
+  font-size: var(--body);  
 }
