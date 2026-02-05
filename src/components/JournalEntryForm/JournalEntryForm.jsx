@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './JournalEntryForm.css'
 import Button from '../Button/Button';
+import Editor from '../Editor/Editor';
 
 export default function JournalEntryForm() {
   const [textAreaValue, setTextAreaValue] = useState('');
@@ -23,25 +24,24 @@ export default function JournalEntryForm() {
 
   const formattedDate = `${day} . ${month} . ${year}`;
 
+   const [range, setRange] = useState();
+  const [lastChange, setLastChange] = useState();
+  const quillRef = useRef();
+
   return (
-    <div className = "poem-entry-container">
+    <div>
       <form>
-        <input 
-          id = "title"
-          className="entry-title" 
-          type="text" 
-          value={titleValue} 
-          onChange={handleTitleChange} 
-          placeholder="Title" 
-        />
-        <textarea className = "entry-text-area"
-          id="myTextArea"
-          value={textAreaValue}
-          onChange={handleTextChange}
-          placeholder="Begin writing ~" 
-        />
-        <div className = "button-container-entry">
-          <Button buttonText={"Save"} type = {"submit"} className = {"primary-button"} handleClick = {handleClick} isActive = {true}/>
+        <div className = "poem-entry-container">
+          <div className = "editor-container">
+            <Editor
+            ref={quillRef}
+            onSelectionChange={setRange}
+            onTextChange={setLastChange}
+            />
+          </div>
+          <div className = "button-container-entry">
+            <Button buttonText={"Save"} type = {"submit"} className = {"primary-button"} handleClick = {handleClick} isActive = {true}/>
+          </div>
         </div>
       </form>
     </div>

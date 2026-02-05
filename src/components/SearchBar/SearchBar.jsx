@@ -5,7 +5,7 @@ export default function SearchBar(){
         <div className = "search-container">
             <div className = "search-input-container">
                 <SearchLine/>
-                <input type="text" className = "search-input" placeholder = "Search for poem"></input>
+                <input type="text" className = "search-input" placeholder = "Search for a poem"></input>
              </div>
             <hr className = "search-hr"></hr>
         </div>
