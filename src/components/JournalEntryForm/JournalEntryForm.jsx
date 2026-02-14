@@ -20,21 +20,15 @@ export default function JournalEntryForm() {
 
   const [body, setBody] = useState('');
   const [date, setDate] = useState(formattedDate);
-
-  const[isNewForm, setisNewForm] = useState(true);
   
   const readEntry = (event) => {
     event.preventDefault();
-    if(isNewForm){ 
-      const entry = createEntry({body,date});
-      console.log(entry.id);
-      console.log(entry.body);
-      console.log(entry.date);
-      setisNewForm(false)}
-    else{
-      console.log("this form exists!");
-    }
+    const entry = createEntry({body,date});
+    console.log(entry.id);
+    console.log(entry.body);
+    console.log(entry.date);
   }
+
   useEffect(()=>{
     const delta = quillRef.current.getContents();
     const serialized = JSON.stringify(delta, null, 2);
