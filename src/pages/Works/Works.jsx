@@ -1,10 +1,22 @@
 import PoemCard from "../../components/PoemCard/PoemCard"
 import "./Works.css"
-import React from "react"
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import SearchBar from "../../components/SearchBar/SearchBar"
+import WorkTab from "../../components/WorkTab/WorkTab";
+import { WorksContext } from '../../contexts/WorksContext';
+import { useNavigate } from 'react-router-dom';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 
 export default function Works() {
+  const {getWorks} = useContext(WorksContext);
+  const navigate = useNavigate();
+  const allWorks = getWorks();
+
+  const getText = (delta) => {
+        if (!delta || !delta.ops) return '';
+        return delta.ops.map(op => op.insert || '').join('');
+  };
+  
   return (
   <div className = "page-content-container"> 
     <SearchBar />
@@ -13,32 +25,13 @@ export default function Works() {
     gutterBreakPoints={{ 0: "1rem" }}
     >
       <Masonry gutter>
-        <PoemCard date = {"11-24-2025"} title = {"Through The Valley"} body = {"I walk through the valley"}/>
-        <PoemCard date = {"11-24-2025"} title = {"Through The Valley"} body = {`I walk through the valley[Verse 1]
-          I walk through the valley of the shadow of death
-          And I'll fear no evil because I'm blind to it all
-          And my mind and my gun, they comfort me
-          Because I know I'll kill my enemies when they come
-
-          [Verse 2]
-          Surely goodness and mercy will follow me all the days of my life
-          And I will dwell on this earth forevermore
-          Still, I walk beside the still waters, and they restore my soul
-          But I can't walk on the path of the right because I'm wrong
-
-          [Verse 3]
-          Well, I came upon a man at the top of a hill
-          Called himself the savior of the human race
-          Said he come to save the world from destruction and pain
-          But I said, "How can you save the world from itself?"
-
-          [Outro]
-          'Cause I walk through the valley of the shadow of death
-          And I'll fear no evil because I'm blind
-          Oh, and I walk beside the still waters, and they restore my soul
-          But I know when I die, my soul is damned`}/>
-        <PoemCard date = {"11-24-2025"} title = {"Through The Valley"} body = {"I walk through the valley of the shadow of death and I fear no evil because I'm blind to it all"}/>
-   
+         {allWorks.reverse().map(work => {
+          const workBody = work.body && work.body.trim() 
+            ? JSON.parse(work.body) 
+            : { content: '' };
+        
+          return <PoemCard workId={work.id} workBody={getText(workBody)} workDate = {work.date}/>;
+        })}
       </Masonry>
     </ResponsiveMasonry>
   </div>);

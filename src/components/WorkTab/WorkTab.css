@@ -2,11 +2,31 @@
     display: flex;
     flex-direction: row;
     align-items:center;
-    gap:10px;
+    justify-content:space-between;
     border-radius: 8px;
     padding:10px 15px 10px 15px;
     height: 20px;
 }
 .work-tab-container:hover{
     background-color:var(--brand-light);
+    .delete-entry-button{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .delete-entry-button:hover{
+        background-color:var(--brand-light);
+        mix-blend-mode: multiply;
+    }
+}
+.delete-entry-button{
+    display:none;
+    border-radius: 5px;
+    padding:1px;
+}
+.work-preview-container{
+    white-space: nowrap;      
+    overflow: hidden;       
+    text-overflow: ellipsis; 
+    max-width: 100%;  
 }

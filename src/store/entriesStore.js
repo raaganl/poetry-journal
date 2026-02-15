@@ -7,6 +7,4 @@ function createEntry({ body, formattedDate }) {
     formattedDate,
   };
 }
-
-
 export default createEntry;
