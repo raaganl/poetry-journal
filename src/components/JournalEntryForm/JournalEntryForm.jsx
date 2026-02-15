@@ -1,10 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import './JournalEntryForm.css'
 import Button from '../Button/Button';
 import Editor from '../Editor/Editor';
 import createEntry from '../../store/entriesStore'
+import { WorksContext } from '../../contexts/WorksContext';
 
 export default function JournalEntryForm() {
+  const { addWorks } = useContext(WorksContext);
   const dateObj = new Date();
 
   const day = dateObj.getDate();    
@@ -20,21 +22,13 @@ export default function JournalEntryForm() {
 
   const [body, setBody] = useState('');
   const [date, setDate] = useState(formattedDate);
-
-  const[isNewForm, setisNewForm] = useState(true);
   
   const readEntry = (event) => {
     event.preventDefault();
-    if(isNewForm){ 
-      const entry = createEntry({body,date});
-      console.log(entry.id);
-      console.log(entry.body);
-      console.log(entry.date);
-      setisNewForm(false)}
-    else{
-      console.log("this form exists!");
-    }
+    const entry = createEntry({body,date});
+    addWorks(entry);
   }
+
   useEffect(()=>{
     const delta = quillRef.current.getContents();
     const serialized = JSON.stringify(delta, null, 2);

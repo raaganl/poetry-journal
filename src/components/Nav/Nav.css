@@ -1,79 +1,44 @@
 
 .nav-bar{
+  display:flex;
   flex-direction: column;
-  align-items: center;
   height: 100vh;
   background: var(--white);
-  padding: 10px;
-  display: inline-flex;
   padding: 60px 20px 50px 20px;
-  flex-shrink: 0;
   top:0;
-  width: 100px;
+  width: 200px;
   position: fixed;
   border-right: solid 1px;
   border-color:var(--light-grey);
+  gap:100px;
 }
 
 .nav-link{
   color: var(--black);
-  display: flex;
-  padding: 15px 30px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100px;
-  gap: 10px;
+  border-radius: 10px;
   font-size: var(--clickables-text);
   font-weight: var(--font-weight-regular);
 }
 
-.link-text{
-  display: none;
-  position: absolute;
-}
-
-.link-icon{
-  position: absolute;
-  top:0;
-  transition: top .3s ease;
-}
-
-.link-text-active{
-  position: absolute;
-}
-
-.link-icon-active{
-  position: absolute;
-  top: -10px;
-}
-
 .link-container{
-  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 60px;
+  flex-direction: row;
+  align-items:center;
+  gap:10px;
+  border-radius: 10px;
+  padding:10px 15px 10px 15px;
+  height: 40px;
+}
+.actions-container{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
 .nav-link:hover{
   color: var(--black);
-  .link-text{
-    display: block;
-    animation: slideIn .3s ease;
-  }
-  .link-icon{
-    top: -10px;
-  }
-  
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(20%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.link-container:hover{
+  background-color:var(--brand-light);
 }

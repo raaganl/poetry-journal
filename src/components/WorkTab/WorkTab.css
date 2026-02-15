@@ -1,0 +1,12 @@
+.work-tab-container{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    gap:10px;
+    border-radius: 8px;
+    padding:10px 15px 10px 15px;
+    height: 20px;
+}
+.work-tab-container:hover{
+    background-color:var(--brand-light);
+}
