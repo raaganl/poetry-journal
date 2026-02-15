@@ -1,10 +1,9 @@
 import "./PoemCard.css"
-export default function PoemCard({date, title, body}){
+export default function PoemCard({workDate, workId, workBody}){
     return(
         <div className = "poem-card-container">
-            <h1 className = "poem-title">{title}</h1>
-            <p className = "poem-body">{body}</p>
-            <p className = "poem-date">{date}</p>
+            <p className="poem-body">{JSON.stringify(workBody, null, 2)}</p>
+            <p className = "poem-date">{workDate}</p>
         </div>
     );
 }
