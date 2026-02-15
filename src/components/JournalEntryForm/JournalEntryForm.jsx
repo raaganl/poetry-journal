@@ -1,10 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import './JournalEntryForm.css'
 import Button from '../Button/Button';
 import Editor from '../Editor/Editor';
 import createEntry from '../../store/entriesStore'
+import { WorksContext } from '../../contexts/WorksContext';
 
 export default function JournalEntryForm() {
+  const { addWorks } = useContext(WorksContext);
   const dateObj = new Date();
 
   const day = dateObj.getDate();    
@@ -24,9 +26,7 @@ export default function JournalEntryForm() {
   const readEntry = (event) => {
     event.preventDefault();
     const entry = createEntry({body,date});
-    console.log(entry.id);
-    console.log(entry.body);
-    console.log(entry.date);
+    addWorks(entry);
   }
 
   useEffect(()=>{

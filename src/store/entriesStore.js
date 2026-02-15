@@ -1,14 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 
-let id = 0;
-const createEntry = ({body, date})=>{
-  const newEntry = {
-    body:body,
-    id:id,
-    date: date,
+function createEntry({ body, formattedDate }) {
+  return {
+    id: Date.now(),
+    body,
+    formattedDate,
   };
-  id = id + 1;
-  return newEntry;
-};
+}
+
 
 export default createEntry;
