@@ -11,11 +11,6 @@ export default function Works() {
   const {getWorks} = useContext(WorksContext);
   const navigate = useNavigate();
   const allWorks = getWorks();
-
-  const getText = (delta) => {
-        if (!delta || !delta.ops) return '';
-        return delta.ops.map(op => op.insert || '').join('');
-  };
   
   return (
   <div className = "page-content-container"> 
@@ -26,11 +21,7 @@ export default function Works() {
     >
       <Masonry gutter>
          {allWorks.reverse().map(work => {
-          const workBody = work.body && work.body.trim() 
-            ? JSON.parse(work.body) 
-            : { content: '' };
-        
-          return <PoemCard workId={work.id} workBody={getText(workBody)} workDate = {work.date}/>;
+          return <PoemCard workId={work.id} workBody={work.body} workDate = {work.date}/>;
         })}
       </Masonry>
     </ResponsiveMasonry>

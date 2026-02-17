@@ -1,8 +1,12 @@
 import "./PoemCard.css"
+import React, { useRef, useState, useEffect, useContext } from 'react';
+import { RenderDelta } from 'quill-delta-to-react';
+
 export default function PoemCard({workDate, workId, workBody}){
+    const quillRef = useRef();
     return(
         <div className = "poem-card-container">
-            <p className="poem-body">{JSON.stringify(workBody, null, 2)}</p>
+            <RenderDelta ops={JSON.parse(workBody).ops} />
             <p className = "poem-date">{workDate}</p>
         </div>
     );

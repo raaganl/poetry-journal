@@ -6,7 +6,7 @@ import createEntry from '../../store/entriesStore'
 import { WorksContext } from '../../contexts/WorksContext';
 
 export default function JournalEntryForm({journalObject}) {
-  const { updateWorks } = useContext(WorksContext);
+  const { updateWorks, getWorksById } = useContext(WorksContext);
   const dateObj = new Date();
 
   const day = dateObj.getDate();    
@@ -19,9 +19,11 @@ export default function JournalEntryForm({journalObject}) {
   const [lastChange, setLastChange] = useState('');
 
   const quillRef = useRef();
-
+  
   const [body, setBody] = useState('');
   const [date, setDate] = useState(formattedDate);
+
+  const [isActive,setIsActive] = useState(false);
   
   const readEntry = (event) => {
     event.preventDefault();
@@ -29,8 +31,8 @@ export default function JournalEntryForm({journalObject}) {
       body,
       formattedDate,
     };
-    console.log(journalObject);
     updateWorks(journalObject.id, entry);
+    setIsActive(false);
   }
 
   useEffect(() => {
@@ -59,6 +61,17 @@ export default function JournalEntryForm({journalObject}) {
     }
   }, [lastChange]);
 
+  useEffect(() => {
+    const journalSavedBody = getWorksById(journalObject.id).body;
+    if(journalSavedBody == body){
+      setIsActive(false);
+    }
+    else{
+      setIsActive(true);
+    }
+  });
+
+
   return (
     <div>
       <form onSubmit={readEntry}>
@@ -73,7 +86,7 @@ export default function JournalEntryForm({journalObject}) {
           <input type="hidden" name="entryContent" value={body}></input>
           <input type="hidden" name="entryDate" value={formattedDate}></input>
           <div className="button-container-entry">
-            <Button buttonText={"Save"} type={"submit"} className={"primary-button"} isActive={true}/>
+            <Button buttonText={"Save"} type={"submit"} className={"primary-button"} isActive={isActive}/>
           </div>
         </div>
       </form>
